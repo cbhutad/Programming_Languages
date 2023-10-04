@@ -1,0 +1,33 @@
+<!-- 
+
+status attribute on Configuration -> The status logger is used internally by log4j2 components. Setting status="debug" (or "trace") in the configuration will cause this internal logging to be output to the command line.
+
+It will print debug information about which log4j2 plugin components are loaded (all configuration elements map to log4j2 plugins), and more details like for example what appenders and loggers were found, what parameters they have and how they are combined.
+
+This is useful for troubleshooting configuration issues.
+
+-->
+
+<Configuration status="debug">
+
+	<Properties>
+		<Property name="LOG_ROOT">d:/Programming_Languages/Java/logger/src/main/resources</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss} %-5p %c:%L - %m%n"/>
+		</Console>
+		<File name="appFile" fileName="${LOG_ROOT}/app-%d{yyyy-mm-dd}-%i.log">
+			<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss} %-5p %c:%L - %m%n"/>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.java.samples.App" level="trace">
+			<AppenderRef ref="appFile"/>
+		</Logger>
+		<Root level="trace">
+			<AppenderRef ref="console"/>
+		</Root>
+	</Loggers>
+</Configuration>

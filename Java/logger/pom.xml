@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.java.samples</groupId>
+	<artifactId>logger</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>logger</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- The below property defines the class containing the main() method. This was specified to run the given application from command line using maven command -> mvn exec:java -->
+	<properties>
+		<exec.mainClass>com.java.samples.App</exec.mainClass>
+	</properties>
+
+	<!-- log4j-core and log4j-api are the main dependencies required. -->
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+	</dependencies>
+
+</project>
