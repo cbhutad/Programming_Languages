@@ -1,0 +1,10 @@
+2023-09-04 23:09:19 TRACE com.java.samples.App:12 - trace message logged!!
+2023-09-04 23:09:19 DEBUG com.java.samples.App:13 - debug message logged!!
+2023-09-04 23:09:19 INFO  com.java.samples.App:14 - info message logged!!
+2023-09-04 23:09:19 WARN  com.java.samples.App:15 - warn message logged!!
+2023-09-04 23:09:19 ERROR com.java.samples.App:16 - Error Message logged!!!
+java.lang.NullPointerException: NullError
+	at com.java.samples.App.main(App.java:16) [classes/:?]
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279) [exec-maven-plugin-3.1.0.jar:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+2023-09-04 23:09:19 FATAL com.java.samples.App:17 - fatal message logged!!
