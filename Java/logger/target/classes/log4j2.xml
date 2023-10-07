@@ -8,7 +8,7 @@ This is useful for troubleshooting configuration issues.
 
 -->
 
-<Configuration status="debug">
+<Configuration status="warn">
 
 	<Properties>
 		<Property name="LOG_ROOT">d:/Programming_Languages/Java/logger/src/main/resources</Property>
@@ -18,12 +18,18 @@ This is useful for troubleshooting configuration issues.
 		<Console name="console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss} %-5p %c:%L - %m%n"/>
 		</Console>
-		<File name="appFile" fileName="${LOG_ROOT}/app-%d{yyyy-mm-dd}-%i.log">
+		<File name="appFile" fileName="${LOG_ROOT}/app-%d-%i.log">
 			<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss} %-5p %c:%L - %m%n"/>
 		</File>
 	</Appenders>
 	<Loggers>
 		<Logger name="com.java.samples.App" level="trace">
+			<AppenderRef ref="appFile"/>
+		</Logger>
+		<Logger name="com.java.samples.classes.ClassOne" level="trace">
+			<AppenderRef ref="appFile"/>
+		</Logger>
+		<Logger name="com.java.samples.classes.ClassTwo" level="trace">
 			<AppenderRef ref="appFile"/>
 		</Logger>
 		<Root level="trace">
